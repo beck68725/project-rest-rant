@@ -15,11 +15,11 @@ function show () {
               </button>
             </form> 
 
-            <div>
+            <div className='rating'>
                 <h2>Rating</h2>
                 <p>currently unrated</p>
             </div>
-            <div>
+            <div className='comment'>
                 <h2>Comments</h2>
                 <p>No comments yet!</p>
             </div>
