@@ -9,25 +9,25 @@ function edit_form (data) {
             <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                 <div className='form-group'>
                         <label htmlFor="name">Place Name</label>
-                        <input id="name" name="name" value={data.place.name}required />
+                        <input id="name" name="name" defaultValue={data.place.name}required />
                     </div>
                     <div className='form-group'>
                         <label htmlFor="pic">Place Picture</label>
-                        <input id="pic" name="pic" value={data.place.pic} />
+                        <input id="pic" name="pic" defaultValue={data.place.pic} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor="city">City</label>
-                        <input id="city" name="city" value={data.place.city} />
+                        <input id="city" name="city" defaultValue={data.place.city} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor="state">State</label>
-                        <input id="state" name="state" value={data.place.state} />
+                        <input id="state" name="state" defaultValue={data.place.state} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor="cuisines">Cuisines</label>
-                        <input id="cuisines" name="cuisines" value={data.place.cuisines}required />
+                        <input id="cuisines" name="cuisines" defaultValue={data.place.cuisines}required />
                     </div>
-                    <input className='btn btn-primary' type="submit" value="Update Place" />
+                    <input className='btn btn-primary' type="submit" defaultValue="Update Place" />
             </form>
           </main>
         </Def>
