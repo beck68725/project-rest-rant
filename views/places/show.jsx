@@ -67,14 +67,16 @@ function show (data) {
               <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
                 Edit
               </a>     
-              <form method="POST" action={`/places/${data._id}?_method=DELETE`}> 
+              <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
                 <button type="submit" className="btn btn-danger">
                   Delete
                 </button>
               </form> 
             </div>
             </div>
-            <footer className='custInfo'>
+          </div>
+          </main>
+          <footer>
               <hr />
                 <h2>Rating</h2>
                   {rating}
@@ -94,7 +96,7 @@ function show (data) {
                   <label htmlFor="stars">Star Rating</label>
                   <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" className="form-control"/>
                 </div>
-                <div className="form-group col-sm-2">
+                <div className="form-group col-sm-4">
                   <label htmlFor="rant">Rant?</label>
                   <input type="checkbox" id="rant" name="rant" className="form-control"/>
                 </div>
@@ -102,8 +104,6 @@ function show (data) {
 
               </form>
             </footer>
-          </div>
-          </main>
         </Def>
     )
 }

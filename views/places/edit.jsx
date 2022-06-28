@@ -7,6 +7,7 @@ function edit_form (data) {
           <main>
             <h1>Edit Place</h1>
             <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
+                <div className='row'>
                 <div className='form-group col-sm-6'>
                         <label htmlFor="name">Place Name</label>
                         <input id="name" name="name" defaultValue={data.place.name}required />
@@ -15,17 +16,15 @@ function edit_form (data) {
                         <label htmlFor="pic">Place Picture</label>
                         <input id="pic" name="pic" defaultValue={data.place.pic} />
                     </div>
-                    <div className='form-group'>
+                    </div>
+                    <div className='row'>
+                    <div className='form-group col-sm-4'>
                         <label htmlFor="city">City</label>
                         <input id="city" name="city" defaultValue={data.place.city} />
                     </div>
-                    <div className='form-group'>
+                    <div className='form-group col-sm-4'>
                         <label htmlFor="state">State</label>
                         <input id="state" name="state" defaultValue={data.place.state} />
-                    </div>
-                    <div className='form-group'>
-                        <label htmlFor="cuisines">Cuisines</label>
-                        <input id="cuisines" name="cuisines" defaultValue={data.place.cuisines}required />
                     </div>
                     <div className='form-group col-sm-4'>
                         <label htmlFor='founded'>Founded</label>
@@ -33,6 +32,11 @@ function edit_form (data) {
                         id='founded'
                         name='founded'
                         value={data.place.founded} />
+                    </div>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor="cuisines">Cuisines</label>
+                        <input id="cuisines" name="cuisines" defaultValue={data.place.cuisines}required />
                     </div>
                     <input className='btn btn-primary' type="submit" defaultValue="Update Place" />
             </form>
