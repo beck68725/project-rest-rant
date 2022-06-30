@@ -37,7 +37,7 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  db.Place.findOne(req.params.id)
+  db.Place.findByIdAndUpdate(req.params.id)
   .populate('comments')
   .then(place => {
       console.log(place.comments)

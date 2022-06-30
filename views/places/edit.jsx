@@ -31,14 +31,14 @@ function edit_form (data) {
                         <input className='form-control'
                         id='founded'
                         name='founded'
-                        value={data.place.founded} />
+                        defaultValue={data.place.founded} />
                     </div>
                     </div>
                     <div className='form-group'>
                         <label htmlFor="cuisines">Cuisines</label>
                         <input id="cuisines" name="cuisines" defaultValue={data.place.cuisines}required />
                     </div>
-                    <input className='btn btn-primary' type="submit" defaultValue="Update Place" />
+                    <input className='btn btn-primary' type="submit" value="Update Place" />
             </form>
           </main>
         </Def>
