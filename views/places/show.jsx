@@ -28,7 +28,7 @@ function show (data) {
     )
     comments = data.place.comments.map(c => {
       return (
-        <div className="border">
+        <div className="border col-sm-4">
           <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
           <h4>{c.content}</h4>
           <h3>
@@ -64,10 +64,10 @@ function show (data) {
               Serving {data.place.cuisines}
             </h4>
             <div className='buttons'>
-              <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
+              <a href={`/places/${data.place.id}/edit`} className="btn btn-warning"> 
                 Edit
               </a>     
-              <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+              <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
                 <button type="submit" className="btn btn-danger">
                   Delete
                 </button>
@@ -83,14 +83,17 @@ function show (data) {
                 <h2>Comments</h2>
                   {comments}
               <hr />
-              <form method='POST' action={`/places/${data.id}/comment`}>
-              <div className='form-group col-sm-4'>
+              <form method='POST' action={`/places/${data.place.id}/comment`}>
+              <div className='row'>
+              <div className='form-group col-sm-12'>
                 <label htmlFor="content">Content</label>
-                  <input id="content" name="content" defaultValue={data.place.content}required />
+                  <textarea id="content" name="content" className='form-control'></textarea>
                 </div>
+                </div>
+                <div className='row'>
                 <div className='form-group col-sm-4'>
                   <label htmlFor="author">Author</label>
-                  <input id="author" name="author" defaultValue={data.place.author}required />
+                  <input id="author" name="author" className='form-control' />
                 </div>
                 <div className="form-group col-sm-4">
                   <label htmlFor="stars">Star Rating</label>
@@ -100,8 +103,8 @@ function show (data) {
                   <label htmlFor="rant">Rant?</label>
                   <input type="checkbox" id="rant" name="rant" className="form-control"/>
                 </div>
+                </div>
               <input className='btn btn-primary' type="submit" defaultValue="Add Comment" /> 
-
               </form>
             </footer>
         </Def>

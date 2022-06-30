@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
       res.render('places/index', { places })
     })
     .catch(err => {
-      console.log(err) 
+      console.log('err', err) 
       res.render('error404')
     })
 })
@@ -24,7 +24,6 @@ router.post('/', (req, res) => {
           message += `${field} was ${err.errors[field].value}. `
           message += `${err.errors[field].message}`
       }
-      console.log('Validation error message', message)
       res.render('places/new', { message })
   }
   else {
@@ -38,7 +37,7 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  db.Place.findById(req.params.id)
+  db.Place.findOne(req.params.id)
   .populate('comments')
   .then(place => {
       console.log(place.comments)
@@ -103,8 +102,16 @@ router.post('/:id/comment', (req, res) => {
   })
 })
 
-router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
+router.delete('/:id/comment/:commentId', (req, res) => {
+  db.Comment.findByIdAndDelete(req.params.commentId)
+      .then(() => {
+          console.log('Success')
+          res.redirect(`/places/${req.params.id}`)
+      })
+      .catch(err => {
+          console.log('err', err)
+          res.render('error404')
+      })
 })
 
 module.exports = router

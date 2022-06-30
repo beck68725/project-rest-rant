@@ -8,9 +8,9 @@ function error404 () {
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
               <div>
-                  <img src='/Users/rebeccacoburn/Desktop/backEnd/rest-rant/public/image/happyPlace.jpg' alt='Elfin sod house'/>
+                  <img src="http://placekitten.com/500/500" alt="Sorry, we can't find your page." />
                     <div>
-                      Photo by Zane Lee on Unsplash
+                      Photo by PlaceKitten.com
                     </div>
                 </div>
           </main>
