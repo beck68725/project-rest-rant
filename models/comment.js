@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 let commentSchema = new mongoose.Schema({
+    id: '',
     author: {type: String, default: 'Anonymous'},
     rant: { type: Boolean, default: false },
     stars: { type: Number, required: true },
