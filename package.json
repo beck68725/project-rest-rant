@@ -4,7 +4,7 @@
   "engines": {
     "node": "18.3.0"
   },
-  "description": "",
+  "description": "REST-Rant is an app where users can review restaurants.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,13 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.3.8",
     "react": "^18.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beck68725/project-rest-rant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beck68725/project-rest-rant/issues"
+  },
+  "homepage": "https://github.com/beck68725/project-rest-rant#readme"
 }
