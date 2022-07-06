@@ -23,3 +23,5 @@ THE RESTAURANTS' DATA
 | ID        | Name   | City   | State  | Cuisines | Picture |
 | --------- | ------ | ------ | ------ | -------- | ------- |
 | Object ID | String | String | String | String   | String  |
+
+🥲
